@@ -1,0 +1,166 @@
+%
+% Simple asymmetric two-column CV 
+% Author: Sofia JIJON
+%
+
+\documentclass[a4paper,10pt]{article}
+\usepackage[vmargin=1.5cm, hmargin=1.5cm]{geometry}
+\input{MySetup}
+%-------------------------------------------------------------------------------------------------------
+
+\begin{document}
+\thispagestyle{empty}
+
+%-------------------------------------------------------------------------------------------------------
+% Left column
+%-------------------------------------------------------------------------------------------------------
+\begin{adjustbox}{valign=t}
+\begin{minipage}{0.3\textwidth} % Adapt width to your convenience
+%----------------------------------------------------
+% Please add a photo in 1x1 format
+\begin{center}
+\begin{tikzpicture}
+	\clip (0,0) circle (2cm) node {\includegraphics[width=4cm]{photo.jpg}};
+\end{tikzpicture}
+
+\MySkip 	% See MySetup.tex file
+
+%----------------------------------------------------
+{\LARGE \bfseries Wang Lei}
+
+\MySkip 	% See MySetup.tex file
+
+Born on Jan. 29th, 1999\\
+
+Currently living in Beijing City\\
+
+A first year postgraduate student @ UCAS, ICT
+
+\MySkip 	% See MySetup.tex file
+
+\textcolor{ColorTwo}{\faGithub} 
+\myhref{https://github.com/LeiWang1999}{LeiWang1999} \\
+
+
+\textcolor{ColorTwo}{\faChain} 
+\myhref{https://leiblog.wang}{https://leiblog.wang} \\
+
+\textcolor{ColorTwo}{\faEnvelopeO} 
+\myhref{mailto:wanglei21c@mails.ucas.ac.cn}{wanglei21c@mails.ucas.ac.cn}
+
+\end{center}
+
+\vfill
+
+%----------------------------------------------------
+\section*{Scientific interests}
+\raggedright
+\textcolor{ColorOne}{$\circ$} Compiler Infrastructure \\
+\textcolor{ColorOne}{$\circ$} Domain Specific Accelerator \\
+\textcolor{ColorOne}{$\circ$} Compiler Optimization\\
+\textcolor{ColorOne}{$\circ$} DL Compiler
+
+\vfill
+
+%----------------------------------------------------
+\section*{Education}
+	\begin{description}
+	\raggedright
+
+	\item [\normalfont \textcolor{ColorOne}{Aug. 2021 - Present}] \textbf{Masters in Computer Science}\\
+	University of Chinese Academy of Science \\
+	Institute of Computing Technology
+
+	\item [\normalfont \textcolor{ColorOne}{Aug. 2017 - Jun. 2021}] \textbf{Bachelor in Electronic Engineering} \\ 
+	Nanjing Tech University \\
+	\textcolor{red}{Overall GPA:  3.95 / 4.00}
+	\textcolor{red}{Ranking:  1 / 59}
+	
+\end{description}
+
+\vfill
+\end{minipage}
+\end{adjustbox}
+%
+%
+%-------------------------------------------------------------------------------------------------------
+% Vertical rule
+%-------------------------------------------------------------------------------------------------------
+%
+\hfill
+\begin{adjustbox}{valign=t}
+\begin{minipage}{0.05\textwidth} % Adapt width to your convenience
+\MyVerticalRule  % See MySetup.tex file
+\end{minipage}
+\end{adjustbox}
+\hfill
+%
+%-------------------------------------------------------------------------------------------------------
+% Right column
+%-------------------------------------------------------------------------------------------------------
+\begin{adjustbox}{valign=t}
+\begin{minipage}{0.6\textwidth} % Adapt width to your convienience
+%----------------------------------------------------
+\section*{Currently Situation}
+\begin{description}
+	\raggedright
+	\item I'm currently a first year postgraduate student @ UCAS,ICT.\\
+	My research interests lie in Compiler Optimization and ML System, looking for an internship opportunity helps me dive deeply into MLIR and TVM. \\
+	\myhref{https://zhuanlan.zhihu.com/p/442140282}{MLIR: A Brief Survey}
+\end{description}
+
+\section*{Awards \& Honor}
+\begin{description}
+\raggedright
+\item [] \textbf{Competetion} \\
+	First Price of 2019 National Undergraduate Electronics Design Contest \\
+	Third Price of Integrated Circuit Innovation and Entrepreneurship Contest \\
+	Third prize of National FPGA Competition \\
+
+	\item [] \textbf{Scholarship} \\
+	2018 Chinese National Scholarship $\left( Top 、 0.3 \% \right)$ \\
+	2019 School Principle's Scholarship $\left( Top 、 0.1 \% \right)$ \\
+	2020 School Principle's Scholarship $\left( Top 、 0.1 \% \right)$ \\
+	First Prize Scholarship x 3 $\left( Top 、 3 \% \right)$ \\
+	Special Prize Scholarship x 4 $\left( Top 、 3 \% \right)$ 
+
+
+\end{description}
+
+%----------------------------------------------------
+\section*{Experience}
+\begin{description}
+\raggedright
+\item[\normalfont \textcolor{ColorOne}{Sep. 2021 - Oct. 2021.}] 
+	\textbf{Netease Intelligent Hardware R\&D Department}\\ \medskip
+	
+	NPU / DLA Development intern.\\
+	
+	NVDLA(Nvidia Deep Learning Accelerator, an opensource DLA) FPGA deployment and Software stack porting.
+	
+\end{description}
+
+%----------------------------------------------------
+\section*{Oral communications}
+\begin{description}
+	\raggedright
+	\item [\normalfont \textcolor{ColorOne}{Sep. 23th, 2021.}] 
+	\textbf{Tengine Open Talk : New Backend OpenDLA.} [\myhref{https://github.com/LeiWang1999/ZYNQ-NVDLA/TengineTalk.pdf}{slides}] [\myhref{https://www.bilibili.com/video/BV1z44y1478k}{recording}]
+	
+\end{description}
+
+%----------------------------------------------------
+\section*{Publications}
+\begin{description}
+	\raggedright
+	\item [\normalfont \textcolor{ColorOne}{No Publication.}] 
+\end{description}
+
+\MySkip
+
+%----------------------------------------------------
+\LastUpdate
+%----------------------------------------------------
+\end{minipage}
+\end{adjustbox}
+\end{document}
