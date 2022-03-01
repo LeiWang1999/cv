@@ -1,1 +1,11 @@
-Tmp
+Tmp/
+
+*.aux
+
+*.log
+
+*.out
+
+!Tmp/resume.pdf
+
+!Tmp/resume_zh.pdf
