@@ -1,4 +1,6 @@
-Tmp/
+Tmp/*
+
+!Tmp/resume.pdf
 
 *.aux
 
@@ -6,8 +8,5 @@ Tmp/
 
 *.out
 
-!Tmp/resume.pdf
-
-!Tmp/resume_zh.pdf
 
 .DS_Store
