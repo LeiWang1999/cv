@@ -1,167 +1,240 @@
-%
-% Simple asymmetric two-column CV 
-% Author: Sofia JIJON
-%
+\documentclass{article}
 
-\documentclass[a4paper,10pt]{article}
-\usepackage[vmargin=1.5cm, hmargin=1.5cm]{geometry}
-\input{MySetup}
-%-------------------------------------------------------------------------------------------------------
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{graphicx}
+\usepackage{fontawesome}
+\usepackage{setspace}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[colorlinks=true, urlcolor=ColorTwo]{hyperref}
+\usepackage{datetime}
+\usepackage{lipsum}
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+% DEFINITIONS FOR RESUME
+
+\textheight=10in
+\pagestyle{fancy}
+\raggedright
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+
+\setlength{\hoffset}{-2pt}
+\setlength{\footskip}{20pt}
+
+\def\bull{\vrule height 0.8ex width .7ex depth -.1ex }
+
+\newcommand{\contact}[3]{
+\vspace*{5pt}
+\begin{center}
+{\LARGE \scshape {#1}}\\
+\vspace{3pt}
+#2 
+\vspace{2pt}
+#3
+\end{center}
+\vspace*{-8pt}
+}
+
+\newcommand{\header}[1]{{
+\hspace*{-15pt}\vspace*{6pt} \textsc{#1}} \vspace*{-6pt} 
+\lineunder
+}
+
+\newcommand{\lineunder}{
+\vspace*{-8pt} \\ \hspace*{-18pt} 
+\hrulefill \\
+}
+
+\newcommand{\content}{
+\vspace*{2pt}%
+}
+
+\newcommand{\college}[5]{\vspace*{2pt}% 
+\textbf{#1} \labelitemi #2 \labelitemi #3 \hfill #4 \\ #5 
+\vspace*{5pt}
+}
+
+\newcommand{\school}[4]{
+\textbf{#1} \labelitemi #2 \hfill #3 \\ #4 \vspace*{5pt}
+}
+
+\newcommand{\employer}[4]{{
+\vspace*{2pt}%
+\textbf{#1} #2 \hfill #3\\ #4 \vspace*{2pt}}
+}
+
+\newcommand{\project}[3]{{
+\vspace*{2pt}% 
+\textbf{#1} \hfill #2\\ #3 \vspace*{2pt}}
+}
+
+\renewcommand{\labelitemi}{
+$\vcenter{\hbox{\tiny$\bullet$}}$\hspace*{3pt}
+}
+
+\renewcommand{\labelitemii}{
+$\vcenter{\hbox{\tiny$\bullet$}}$\hspace*{-3pt}
+}
+
+%
+% Color theme
+%
+\definecolor{ColorOne}{RGB}{0,110,140} 	% Blue
+\definecolor{ColorTwo}{RGB}{120,0,120} 	% Mauve
+%
+% Format hyperrefs
+%
+\newcommand{\myhref}[2]{%
+\href{#1}{\textcolor{ColorTwo}{#2}}
+}
+
+\newenvironment{bullet-list-major}{
+\begin{list}{\labelitemii}{\setlength\leftmargin{3pt} 
+\topsep 0pt \itemsep -2pt}}{\vspace*{4pt}\end{list}
+}
+
+\newenvironment{bullet-list-minor}{
+\begin{list}{\labelitemii}{\setlength\leftmargin{15pt} 
+\topsep 0pt \itemsep -2pt}}{\vspace*{4pt}\end{list}
+}
+
+\cfoot{
+Last updated: July 7, 2018
+}
+
+\rfoot{
+Page $\thepage\hspace*{3pt}\vert\hspace*{3pt}\pageref{LastPage}$
+}
+
+% END RESUME DEFINITIONS
 
 \begin{document}
-\thispagestyle{empty}
 
-%-------------------------------------------------------------------------------------------------------
-% Left column
-%-------------------------------------------------------------------------------------------------------
-\begin{adjustbox}{valign=t}
-\begin{minipage}{0.3\textwidth} % Adapt width to your convenience
-%----------------------------------------------------
-% Please add a photo in 1x1 format
-\begin{center}
-\begin{tikzpicture}
-	\clip (0,0) circle (2cm) node {\includegraphics[width=4cm]{photo.jpg}};
-\end{tikzpicture}
+\small
+\smallskip
+\vspace*{-44pt}
 
-\MySkip 	% See MySetup.tex file
-
-%----------------------------------------------------
-{\LARGE \bfseries Wang Lei}
-
-\MySkip 	% See MySetup.tex file
-
-Born on Jan. 29th, 1999\\
-
-Currently living in Beijing City\\
-
-A first year postgraduate student @ UCAS, ICT
-
-\MySkip 	% See MySetup.tex file
-
+\contact{Lei Wang}
+{
 \textcolor{ColorTwo}{\faGithub} 
-\myhref{https://github.com/LeiWang1999}{LeiWang1999} \\
-
-
-\textcolor{ColorTwo}{\faChain} 
-\myhref{https://leiblog.wang}{https://leiblog.wang} \\
-
+\myhref{https://github.com/LeiWang1999}{LeiWang1999} 
+\labelitemi 
 \textcolor{ColorTwo}{\faEnvelopeO} 
-\myhref{mailto:wanglei21c@mails.ucas.ac.cn}{wanglei21c@mails.ucas.ac.cn}
+\myhref{mailto:leiwang1999@outlook.com}{leiwang1999@outlook.com}
+\labelitemi
+\textcolor{ColorTwo}{\faChain} 
+\myhref{https://leiblog.wang}{leiblog.wang}
+}
 
-\end{center}
+\vspace{15pt}
+\header{Education}
+    \school{University of Chinese Academy of Science}{Beijing, China}{August 2021 -- Present}
+    {\textit{Masters \labelitemi Computer Science}}
 
-\vfill
+    \school{Nanjing Tech University}{Nanjing, China}{August 2017 -- June 2021}
+    {\textit{Bachelor \labelitemi Electronic Engineering} \labelitemi \textcolor{ColorOne}{\textbf{Overall GPA: 3.95/4.0}}}
 
-%----------------------------------------------------
-\section*{Scientific interests}
-\raggedright
-\textcolor{ColorOne}{$\circ$} Multi-Level IR \\
-\textcolor{ColorOne}{$\circ$} Domain Specific Architecture \\
-\textcolor{ColorOne}{$\circ$} Compiler Optimization\\
-\textcolor{ColorOne}{$\circ$} DL Compiler
+\vspace*{4pt}%
+\header{Work Experience}
+    \employer{Microsoft Research Asia}{-- System Research Intern}{April 2022 -- Present}{Beijing, China}
+	\begin{bullet-list-minor}
+	\item Advised by \myhref{https://xysmlx.github.io/}{Dr. Lingxiao Ma} and \myhref{https://www.microsoft.com/en-us/research/people/jxue/}{Dr. Jilong Xue}
+	\item Maintaining Microsoft DNN compiler \myhref{https://github.com/microsoft/nnfusion}{NNFusion}.
+	\item Research focus: Sparse Tensor Compilation, Auto Tensorize, LLM inference foundation.   
+    \end{bullet-list-minor}
 
-\vfill
+    \employer{Netease}{-- NPU Development Intern}{Sep. 2021 -- Oct. 2021}{Beijing, China}
+	\begin{bullet-list-minor}
+	\item NVDLA FPGA deployment and Software stack remapping.
+    \end{bullet-list-minor}
 
-%----------------------------------------------------
-\section*{Education}
-	\begin{description}
-	\raggedright
+\vspace*{4pt}%
+\header{Projects}
+    \project{Ladder \textcolor{ColorOne}
+{waiting for publication}}{2023}{}
+    \begin{bullet-list-minor}
+	\item Tensor Code Generation for Accelerator. obtaining comparable performance with cuBLAS/Cutlass and outperforms tensorrt of tensor core program. Supporting diverse tensor format remapping.
+    \end{bullet-list-minor}
+    \project{AutoGPTQ.tvm     \textcolor{ColorTwo}{\faGithub} 
+\myhref{https://github.com/LeiWang1999/AutoGPTQ.tvm}{code}}{2023}{}
+    \begin{bullet-list-minor}
+	\item tvm inference kernel for GPTQ.
+    \end{bullet-list-minor}
+    \project{Full Stack FPGA Implementation of NVDLA}{2021}{
+    \textcolor{ColorTwo}{\faGithub} 
+\myhref{https://github.com/LeiWang1999/ZYNQ-NVDLA}{Code Archive}
+    \labelitemi
+    \textcolor{ColorTwo}{\faBook} 
+\myhref{https://zhuanlan.zhihu.com/p/378202360}{post:DLA Deploy}
+    \labelitemi
+        \textcolor{ColorTwo}{\faBook} 
+    \myhref{https://zhuanlan.zhihu.com/p/401943271}{post:Compiler Design}
+}
+	\begin{bullet-list-minor}
+	\item Full-stack FPGA implementation of NVDLA. To enhance the utility of this accelerator, we designed a new compiler and runtime to allow networks auto fallback between CPU and hardware
+                accelerators.
+    \end{bullet-list-minor}
+    \project{FPGA Accelerator for Beam Forming}{2020}{
+    \textcolor{ColorTwo}{\faVideoCamera} 
+    \myhref{https://github.com/LeiWang1999}{Demo}
+}
+	\begin{bullet-list-minor}
+	\item FPGA acceleration to enhance sounds from specific points with tetragonal microphone array.
+    \end{bullet-list-minor}
+    \project{FPGA Accelerator for Digital Recognition}{2020}{
+    \textcolor{ColorTwo}{\faVideoCamera} 
+    \myhref{https://github.com/LeiWang1999}{Demo}
+}
+	\begin{bullet-list-minor}
+	\item This project aims to provide accelerated digital analysis with lenet5.
+    \end{bullet-list-minor}
+    \project{Opensource Contributions     \textcolor{ColorTwo}{\faGithub} 
+    \myhref{https://github.com/LeiWang1999}{LeiWang1999}}{-}{
+}
+	\begin{bullet-list-minor}
+	\item gptq-integration to mlc-llm, matrix core support for tvm, general n:m training for apex, etc.
+    \end{bullet-list-minor}
+ 
+\vspace*{4pt}%
+\header{Publications}
+    \begin{bullet-list-major}
+    \item Lin Bin*; Zheng Ningxin*; \textbf{Wang Lei}*; Cao Shijie; Ma Lingxiao; Zhang Quanlu; Zhu Yi; Cao Ting; Xue Jilong; Yang Yuqing; et al. \textbf{Efficient GPU Kernels for N: M-Sparse Weights in Deep Learning}. \textit{Proceedings of Machine Learning and Systems}, Vol. 5, 2023. (* represents co-first author) \hspace{2pt} \textcolor{ColorTwo}{\faLink}  \myhref{https://proceedings.mlsys.org/paper_files/paper/2023/file/4552cedd396a308320209f75f56a5ad5-Paper-mlsys2023.pdf}{Read Paper}
+    \vspace{2pt}
+    \item Sun Xiaotian; Wang Xinyu; Li Wanqian; \textbf{Wang Lei}; Han Yinhe; Chen Xiaoming. \textbf{PIMCOMP: A Universal Compilation Framework for Crossbar-based PIM DNN Accelerators}. \textit{60th. Design Automation Conference}, 2023.    \textcolor{ColorTwo}{\faLink}  \myhref{https://arxiv.org/pdf/2307.01475.pdf}{Read Paper}
+    \vspace{2pt}
+    \item \textbf{Lei Wang}; Lingxiao Ma; Shijie Cao; Ningxin Zheng; Quanlu Zhang. \textbf{Ladder: Efficient Tensor Compilation on Customized Data Format}. \textit{17th USENIX Symposium on Operating Systems Design and Implementation (Poster)}, 2023.
 
-	\item [\normalfont \textcolor{ColorOne}{Aug. 2021 - Present}] \textbf{Master in Computer Science}\\
-	University of Chinese Academy of Science \\
-	Institute of Computing Technology
+    \end{bullet-list-major}
 
-	\item [\normalfont \textcolor{ColorOne}{Aug. 2017 - Jun. 2021}] \textbf{Bachelor in Electronic Engineering} \\ 
-	Nanjing Tech University \\
-	\textcolor{red}{Overall GPA:  3.95 / 4.00}
-	\textcolor{red}{Ranking:  1 / 59}
-	
-\end{description}
+\vspace*{4pt}%
+\header{Awards}
+\begin{bullet-list-major}
+    \item \textbf{2018 Chinese National Scholarship (Top 0.3\%)}
+    \vspace{2pt}
+    \item 2021 Excellent New Student Award of Chinese Academy of Science
+    \vspace{2pt}
+    \item \textbf{Njtech \textbf{Person of Year 2020}}
+    \vspace{2pt}
+    \item \textbf{First Price of 2019 NUEDC (Top 0.5\%)}
+    \vspace{2pt}
+    \item Third Price of Integrated Circuit Innovation Competition \href{http://leiblog.wang/FPGA车牌识别/}{(FPGA hardware Accelerator for digital recognition)}
+    \vspace{2pt}
+    \item Third prize of National FPGA Competition \href{http://leiblog.wang/ZYNQ声源定位波束形成/}{(FPGA based FOSDA Alogrithom Implementation)}
+\end{bullet-list-major}
 
-\vfill
-\end{minipage}
-\end{adjustbox}
-%
-%
-%-------------------------------------------------------------------------------------------------------
-% Vertical rule
-%-------------------------------------------------------------------------------------------------------
-%
-\hfill
-\begin{adjustbox}{valign=t}
-\begin{minipage}{0.05\textwidth} % Adapt width to your convenience
-\MyVerticalRule  % See MySetup.tex file
-\end{minipage}
-\end{adjustbox}
-\hfill
-%
-%-------------------------------------------------------------------------------------------------------
-% Right column
-%-------------------------------------------------------------------------------------------------------
-\begin{adjustbox}{valign=t}
-\begin{minipage}{0.6\textwidth} % Adapt width to your convienience
-%----------------------------------------------------
-\section*{Currently Situation}
-\begin{description}
-	\raggedright
-	\item I'm currently a first year postgraduate student @ UCAS,ICT.\\
-	My research interests lie in ML System and Optimization, looking for an internship opportunity helps me dive deeply into DL Compiler Stack. \\
-	I enjoy writing post: \myhref{https://zhuanlan.zhihu.com/p/442140282}{MLIR: A Brief Survey}\\
-	I'm also a contributor of \myhref{https://github.com/OAID/Tengine}{Tengine} and \myhref{https://github.com/buddy-compiler/buddy-mlir}{buddy-mlir}.
+\blfootnote{
+\textcolor{black}{Last updated: \monthname,~\the\year.} \vspace{1mm}
+}
 
-\end{description}
-
-\section*{Awards \& Honor}
-\begin{description}
-\raggedright
-\item [] \textbf{Competetion} \\
-	First Price of 2019 National Undergraduate Electronics Design Contest \\
-	Third prize of National FPGA Competition \\
-	\myhref{https://leiblog.wang/about}{more competition awards.}
-	\item [] \textbf{Scholarship} \\
-	2018 Chinese National Scholarship $\left( Top 、 0.3 \% \right)$ \\
-	2019 School Principle's Scholarship $\left( Top 、 0.1 \% \right)$ \\
-	2020 School Principle's Scholarship $\left( Top 、 0.1 \% \right)$
-
-
-\end{description}
-
-%----------------------------------------------------
-\section*{Experience}
-\begin{description}
-\raggedright
-\item[\normalfont \textcolor{ColorOne}{Sep. 2021 - Oct. 2021.}] 
-	\textbf{Netease Intelligent Hardware R\&D Department}\\ \medskip
-	
-	NPU / DLA Development.\\
-		
-\end{description}
-
-\begin{description}
-	\raggedright
-	\item[\normalfont \textcolor{ColorOne}{April. 2022 - Oct. 2023.}] 
-		\textbf{Microsoft Research Asia System Research Group}\\ \medskip
-		
-		Systems Research. Focus on Efficient Auto-Tenorization and Sparse Computation research on GPU.\\
-		
-	\end{description}
-	
-%----------------------------------------------------
-\section*{Oral communications}
-\begin{description}
-	\raggedright
-	\item [\normalfont \textcolor{ColorOne}{Sep. 23th, 2021.}] 
-	\textbf{Tengine Open Talk : New Backend OpenDLA.} [\myhref{https://github.com/LeiWang1999/ZYNQ-NVDLA/blob/master/TengineTalk.pdf}{slides}] [\myhref{https://www.bilibili.com/video/BV1z44y1478k}{recording}]
-
-	I made a big pull requst \myhref{https://github.com/OAID/Tengine/pull/1061}{\#1061} to integrate NVDLA with Tengine.
-\end{description}
-
-
-\MySkip
-
-%----------------------------------------------------
-\LastUpdate
-%----------------------------------------------------
-\end{minipage}
-\end{adjustbox}
 \end{document}
