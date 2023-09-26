@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.23)  21 SEP 2023 11:45
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.23)  26 SEP 2023 17:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -494,26 +494,4 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
 LaTeX Font Warning: Font shape `TU/FontAwesome(0)/bx/n' undefined
-(Font)              using `TU/FontAwesome(0)/m/n' instead on input line 170.
-
-
-AED: lastpage setting LastPage
-[1
-
-] (Tmp/resume.aux)
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-Package rerunfilecheck Info: File `resume.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
- ) 
-Here is how much of TeX's memory you used:
- 14704 strings out of 476919
- 264615 string characters out of 5821840
- 823540 words of memory out of 5000000
- 34453 multiletter control sequences out of 15000+600000
- 413260 words of font info for 72 fonts, out of 8000000 for 9000
- 1348 hyphenation exceptions out of 8191
- 96i,13n,103p,1021b,334s stack positions out of 5000i,500n,10000p,200000b,80000s
-
-Output written on Tmp/resume.pdf (1 page).
+(Font)              
